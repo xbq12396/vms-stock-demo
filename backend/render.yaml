@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: vms-market-data
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: CORS_ORIGINS
+        value: https://xbq12396.github.io
+      - key: QUOTE_CACHE_TTL_SECONDS
+        value: "30"
